@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <style>
+      .button-container {
+          text-align: right; /* Align the contents to the right */
+          margin-top: 20px; /* Add some space at the top for clarity */
+      }
+
+      .button-container button {
+          margin-left: 10px; /* Add some space between buttons if needed */
+      }
+      .search-container label {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          font-size: 16px;
+          color: #757575;
+          pointer-events: none; /* Prevents label from blocking input clicks */
+          transition: 0.2s ease all; /* Smooth transition for label */
+      }
+  </style>
+</head>
+<body>
+    <div>
+        <div class="button-container">
+            <a href="https://create-react-app.dev/docs/code-splitting/">
+              Gmail
+            </a>
+            &nbsp&nbsp
+            <a href="https://create-react-app.dev/docs/code-splitting/">
+              Images
+            </a>
+            &nbsp&nbsp
+            <a>
+              <img href="https://www.example.com" src="images.png"  alt="Link to Example.com"
+              width="16" height="16">
+            </a>
+            &nbsp&nbsp
+            <a>
+              <img href="https://www.example.com" src="images.png"  alt="Link to Example.com"
+              width="16" height="16">
+            </a>
+            &nbsp&nbsp
+            <a>
+              <img href="https://www.example.com" src="images.png"  alt="Link to Example.com"
+              width="16" height="16">
+            </a>
+        </div>
+        <div class="search-container">
+          <input type="text" id="search" name="search" required>
+          <label for="search">Search...</label>
+        </div>
+    </div>
+</body>
+</html>

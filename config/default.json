@@ -1,3 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://Msvyk:Msvyk123@devconnector.oeqvk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://Msvyk:Israel.1986@devconnector.rtvksnf.mongodb.net/",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "9619785fb09a65a5d9d2",
+  "githubSecret": "ac6b02817397970971222d0f2a50048f2c8d2ace"
 }
