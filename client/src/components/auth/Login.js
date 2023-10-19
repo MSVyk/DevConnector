@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -22,10 +22,14 @@ const Login = ({ login, isAuthenticated }) => {
     login(email, password);
   };
 
-  // Redrect if logged in
-  if(isAuthenticated) {
-    navigate("/dashboard");
-  }
+
+  useEffect(() => {
+    // Redrect if logged in
+    if(isAuthenticated) {
+      console.log('Redirected from Login.js to /dashboard');
+      navigate("/dashboard");
+    }
+  },[isAuthenticated]);
 
   return (
     <Fragment>

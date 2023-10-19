@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setAlert } from "../../actions/alert";
@@ -31,10 +31,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     }
   };
 
-  // Redrect if logged in
-  if(isAuthenticated) {
-    navigate("/dashboard");
-  }
+  useEffect(() => {
+    // Redrect if logged in
+    if(isAuthenticated) {
+      navigate("/dashboard");
+    }
+  },[isAuthenticated]);
 
   return (
     <Fragment>

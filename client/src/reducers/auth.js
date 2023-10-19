@@ -33,7 +33,7 @@ export default function(state = initialState, action) {
         ...state,
         ...payload,
         isAuthenticated: true,
-        loading: false
+        loading: false,
       }
     case REGESTER_FAIL:
     case AUTH_ERROR:
