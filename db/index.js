@@ -41,7 +41,9 @@ const connectDB = async () => {
   try {
     mongoose.set('strictQuery', true); // Set strictQuery to true
     await mongoose.connect(db, {
-      // Other connection options
+      useNewUrlParser: true, // Recommended option
+      useUnifiedTopology: true, // Recommended option
+      dbName: 'test'
     });
 
     console.log("MongoDB Connected .<.<.<.");
