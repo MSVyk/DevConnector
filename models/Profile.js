@@ -5,7 +5,10 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
-  websitte: {
+  company: {
+    type: String
+  },
+  website: {
     type: String
   },
   location: {
@@ -105,7 +108,6 @@ const ProfileSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+});
 
-})
-
-module.exports = Profile = mongoose.model('profile', ProfileSchema);
+module.exports = mongoose.model('profile', ProfileSchema);

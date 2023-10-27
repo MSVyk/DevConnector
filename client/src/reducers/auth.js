@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
-  REGESTER_SUCCESS,
-  REGESTER_FAIL,
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_FAIL,
@@ -26,7 +26,7 @@ export default function(state = initialState, action) {
         loading: false,
         user: payload
       }
-    case REGESTER_SUCCESS:
+    case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem('token', payload.token);
       return {
@@ -35,7 +35,7 @@ export default function(state = initialState, action) {
         isAuthenticated: true,
         loading: false,
       }
-    case REGESTER_FAIL:
+    case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT:

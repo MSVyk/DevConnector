@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { setAlert } from './alert';
 import {
-  REGESTER_SUCCESS,
-  REGESTER_FAIL,
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_FAIL,
@@ -46,7 +46,7 @@ export const register = ({ name, email, password }) => async dispatch => {
     const res = await axios.post('/api/users', body, config);
 
     dispatch({
-      type: REGESTER_SUCCESS,
+      type: REGISTER_SUCCESS,
       payload: res.data
     })
   } catch (err) {
@@ -57,7 +57,7 @@ export const register = ({ name, email, password }) => async dispatch => {
     }
 
     dispatch({
-      type: REGESTER_FAIL
+      type: REGISTER_FAIL
     })
     dispatch(loadUser())
   }
