@@ -7,6 +7,7 @@ const config = require('config');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post')
 
 // @route    GET api/profile/me
 // @desc     Get current user's profile
@@ -73,7 +74,6 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
     if (linkedin) profileFields.social.linkedin = linkedin;
 
-    console.log(profileFields.social.twitter)
     try {
       let profile = await Profile.findOne({ user: req.user.id });
       if (profile) {
@@ -137,7 +137,9 @@ router.get('/user/:user_id', async (req, res) => {
 
 router.delete('/', auth, async (req, res) => {
   try {
-    // @todo - remove users posts
+    // Remove user posts. OPTIONAL
+    await Post.deleteMany({ user: req.user.id })
+
     // Remove profile
     await Profile.findOneAndRemove({ user: req.user.id});
     // Remove user
@@ -190,7 +192,6 @@ router.put(
 router.delete('/experience/:exp_id', auth, async (req, res) => {
 try {
   const profile = await Profile.findOne({ user: req.user.id });
-  console.log(profile, "hmm")
 
   // Get remove index
   const removeIndex = profile.experience
@@ -224,7 +225,6 @@ router.put(
     .notEmpty()
     .custom((value, { req }) => (req.body.to ? value < req.body.to : true)),
   async (req, res) => {
-    console.log('>>>hited the server', { req })
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -253,7 +253,6 @@ router.put(
 router.delete('/education/:edu_id', auth, async (req, res) => {
 try {
   const profile = await Profile.findOne({ user: req.user.id });
-  console.log(profile, "hmm")
 
   // Get remove index
   const removeIndex = profile.education

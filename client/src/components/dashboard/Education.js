@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { deleteEducation } from '../../actions/profile';
+import { deleteEducation } from '../../actions/profile';
 import formatDate from '../../utils/formatDate';
 
 const Education = ({ education, deleteEducation }) => {
-  const educations = education.map((edu) => (
+  const educations = education?.sort((a, b) => new Date(b.to) - new Date(a.to))
+  .map((edu) => (
     <tr key={edu._id}>
       <td>{edu.school}</td>
       <td className="hide-sm">{edu.degree}</td>
@@ -43,8 +44,8 @@ const Education = ({ education, deleteEducation }) => {
 
 Education.propTypes = {
   education: PropTypes.array.isRequired,
-  // deleteEducation: PropTypes.func.isRequired
+  deleteEducation: PropTypes.func.isRequired
 };
 
-export default Education;
-// export default connect(null, { deleteEducation })(Education);
+// export default Education;
+export default connect(null, { deleteEducation })(Education);
