@@ -36,7 +36,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if(isAuthenticated) {
       navigate("/dashboard");
     }
-  },[isAuthenticated]);
+  },[isAuthenticated,navigate]);
 
   return (
     <Fragment>

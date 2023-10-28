@@ -11,7 +11,7 @@ const Landing = ({ isAuthenticated }) => {
       console.log('redirected from Landing page to the Dashboard')
       navigate("/dashboard");
     }
-  },[isAuthenticated]);
+  },[isAuthenticated,navigate]);
   return (
     <section className="landing">
       <div className="dark-overlay">

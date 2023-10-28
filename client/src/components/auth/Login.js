@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated }) => {
       console.log('Redirected from Login.js to /dashboard');
       navigate("/dashboard");
     }
-  },[isAuthenticated]);
+  },[isAuthenticated,navigate]);
 
   return (
     <Fragment>

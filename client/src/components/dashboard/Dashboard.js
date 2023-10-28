@@ -18,7 +18,7 @@ const Dashboard = ({
   const hasProfile = profile !== null ? true: false;
   useEffect(() => {
     getCurrentProfile();
-  },[hasProfile]);
+  },[hasProfile, getCurrentProfile]);
   console.log('>>> Dashboard! Where is education???', {profile})
   return loading && profile === null ? <Spinner /> : <Fragment>
     <h1 className="large text-primary">Dashboard</h1>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { setAlert } from "./alert";
-import api from '../utils/api';
+// import api from '../utils/api';
 
 import {
   GET_PROFILE,
@@ -38,7 +38,7 @@ export const getProfiles = () => async dispatch => {
   dispatch({ type: CLEAR_PROFILE })
   try {
     const res = await axios.get('/api/profile');
-    console.log('>>> profile.js res from /api/profile/me', { res })
+    console.log('>>> getProfiles action res from /api/profile', { res })
     dispatch({
       type: GET_PROFILES,
       payload: res.data
